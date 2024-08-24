@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            background-color: rgb(255, 203, 211);
+            font-family: sans-serif;
+            text-align: center;
+            padding: 68px;
+
+        }
+        section {
+            background-color: rgb(250, 101, 255);
+            text-align: center;
+            border-radius: 14px;
+
+        }
+        input {
+            background-color: transparent; 
+            padding: 13px 8px;
+            border-radius: 11px;
+            border-color: aliceblue;
+            text-align: center;
+            border-style: groove;
+
+        }
+        button {
+            background-color: rgb(220, 182, 255);
+            border-radius: 10px;
+            padding: 9px;
+
+
+        }
+        section h3 {
+            text-decoration: chartreuse;
+            color: rgb(75, 63, 72);
+            font-family: cursive;
+
+        }
+        button:hover {
+            background-color: antiquewhite;
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+ 
+    <h2>❤️Love Calculator by Suraj❤️</h2>
+    <section>
+        <h3>Find love Percentage Between</h3>
+        <form>
+            <input type="text" placeholder="Your name">
+            <input type="text" placeholder="Crush name">
+            
+            <br>
+            <button>Find ❤️ Percentage</button>
+        </form>
+        <h3 id="result"></h3> <!-- Result will appear here -->
+    </section>
+    <script>
+        function calculateLovePercentage() {
+            // Get the values of the input fields
+            const yourName = document.querySelector('input[placeholder="Your name"]').value;
+            const crushName = document.querySelector('input[placeholder="Crush name"]').value;
+    
+            // Check if both fields are filled
+            if (yourName === "" || crushName === "") {
+                alert("Please enter both names!");
+                return;
+            }
+    
+            // Generate a random love percentage
+            const lovePercentage = Math.floor(Math.random() * 100) + 1;
+    
+            // Display the result
+            const resultSection = document.getElementById('result');
+            resultSection.innerText = `💖 ${yourName} and ${crushName} have a ${lovePercentage}% love compatibility! 💖`;
+        }
+    
+        // Attach the calculateLovePercentage function to the button click
+        document.querySelector('button').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            calculateLovePercentage();
+        });
+    </script>
+    
+
+
+
+ 
+    
+</body>
+</html>
